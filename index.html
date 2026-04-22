@@ -7,14 +7,15 @@
 <meta name="description" content="Study for the NEW 2025 U.S. Naturalization Civics Test. All 128 official USCIS questions, free interactive flashcards, random practice, and realistic test simulation. Updated October 2025. Free, no account needed.">
 <meta name="keywords" content="2025 naturalization civics test, citizenship test 2025, USCIS civics test 128 questions, naturalization test study guide 2025, civics test flashcards, US citizenship test practice, prueba de civismo 2025">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://uscivicstest2025.com/">
+<link rel="canonical" href="https://www.civicstestprep.com/">
 <meta property="og:title" content="2025 U.S. Naturalization Civics Test – Free 128-Question Study Guide">
 <meta property="og:description" content="The most up-to-date free study tool for the NEW 2025 USCIS Naturalization Civics Test. All 128 official questions with flashcards, random practice, and simulated test. No account needed.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://www.civicstestprep.com/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#07111F">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"EducationalApplication","name":"2025 U.S. Naturalization Civics Test Study Guide","description":"Free interactive study tool for the 2025 USCIS Naturalization Civics Test with all 128 official questions, flashcards, and test simulation.","applicationCategory":"EducationalApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"inLanguage":["en","es"],"dateModified":"2025-10-20"}
+{"@context":"https://schema.org","@type":"EducationalApplication","name":"2025 U.S. Naturalization Civics Test Study Guide","description":"Free interactive study tool for the 2025 USCIS Naturalization Civics Test with all 128 official questions, flashcards, and test simulation.","url":"https://www.civicstestprep.com/","applicationCategory":"EducationalApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"inLanguage":["en","es"],"dateModified":"2025-10-20"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many questions are on the 2025 naturalization civics test?","acceptedAnswer":{"@type":"Answer","text":"The 2025 naturalization civics test has a pool of 128 official questions. A USCIS officer will ask you up to 20 of these questions during your naturalization interview."}},{"@type":"Question","name":"How many questions do you need to pass the 2025 civics test?","acceptedAnswer":{"@type":"Answer","text":"You must answer at least 12 out of 20 questions correctly to pass. The officer stops when you reach 12 correct (pass) or 9 incorrect (fail)."}},{"@type":"Question","name":"When did the 2025 civics test take effect?","acceptedAnswer":{"@type":"Answer","text":"The 2025 Naturalization Civics Test took effect on October 20, 2025 for anyone who filed Form N-400 on or after that date."}},{"@type":"Question","name":"What is different about the 2025 civics test vs the 2008 test?","acceptedAnswer":{"@type":"Answer","text":"The 2025 test has 128 questions (vs 100), asks 20 questions (vs 10), and requires 12 correct answers (vs 6) to pass."}},{"@type":"Question","name":"What is the 65/20 senior exemption for the civics test?","acceptedAnswer":{"@type":"Answer","text":"If you are 65 or older and have been a lawful permanent resident for at least 20 years, you take a shorter test: 10 questions from a pool of 20, and need 6 correct to pass. You may also take the test in the language of your choice."}}]}
@@ -116,34 +117,43 @@ header{background:linear-gradient(180deg,rgba(7,17,31,.99) 0%,rgba(13,30,53,.97)
 
 /* FLASHCARD */
 .card-area{perspective:1400px;margin-bottom:16px}
-.fc{width:100%;position:relative;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.4,0,.2,1);cursor:pointer}
+/* Fixed-height card container — front question, back scrollable answers */
+.fc-wrap{position:relative;height:300px}
+@media(max-width:580px){.fc-wrap{height:280px}}
+.fc{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.4,0,.2,1);cursor:pointer}
 .fc.flip{transform:rotateY(180deg)}
-.cf{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:28px 24px}
-/* dynamic min-height handled by JS wrapper */
-.cf-front{background:linear-gradient(145deg,var(--navy3) 0%,rgba(27,58,107,.45) 100%);border:2px solid rgba(255,215,0,.18);box-shadow:0 20px 60px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05)}
-.cf-back{background:linear-gradient(145deg,#091A0F 0%,#0E2C1A 100%);border:2px solid rgba(110,232,155,.22);box-shadow:0 20px 60px rgba(0,0,0,.55),inset 0 1px 0 rgba(110,232,155,.06);transform:rotateY(180deg)}
-.c-meta{display:flex;gap:8px;align-items:center;margin-bottom:14px;flex-wrap:wrap;justify-content:center}
+.cf{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r);display:flex;flex-direction:column;align-items:center;text-align:center;padding:22px 22px 16px}
+.cf-front{background:linear-gradient(145deg,var(--navy3) 0%,rgba(27,58,107,.45) 100%);border:2px solid rgba(255,215,0,.18);box-shadow:0 20px 60px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05);justify-content:center}
+.cf-back{background:linear-gradient(145deg,#091A0F 0%,#0E2C1A 100%);border:2px solid rgba(110,232,155,.22);box-shadow:0 20px 60px rgba(0,0,0,.55),inset 0 1px 0 rgba(110,232,155,.06);transform:rotateY(180deg);justify-content:flex-start;overflow:hidden}
+.c-meta{display:flex;gap:8px;align-items:center;margin-bottom:10px;flex-wrap:wrap;justify-content:center;flex-shrink:0}
 .c-num{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,215,0,.6);background:rgba(255,215,0,.07);padding:2px 9px;border-radius:4px;border:1px solid rgba(255,215,0,.13)}
 .c-cat{font-size:9px;letter-spacing:1.1px;text-transform:uppercase;padding:2px 9px;border-radius:4px;background:rgba(100,160,255,.09);border:1px solid rgba(100,160,255,.18);color:#90BBFF}
 .c-star{font-size:9px;padding:2px 9px;border-radius:4px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.28);color:var(--gold)}
-.c-q{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(16px,2.6vw,24px);line-height:1.45;color:var(--white);flex:1;display:flex;align-items:center;padding:12px 0;width:100%;justify-content:center}
-.c-q .underline{text-decoration:underline}
-.flip-hint{display:flex;align-items:center;gap:5px;font-size:11px;color:rgba(200,203,212,.45);margin-top:12px;animation:hb 2.5s ease-in-out infinite}
+.c-q{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(15px,2.4vw,22px);line-height:1.55;color:var(--white);display:block;padding:8px 0;width:100%;text-align:center}
+.c-q u{text-decoration:underline;text-underline-offset:2px;display:inline;white-space:normal;font-style:normal}
+.flip-hint{display:flex;align-items:center;gap:5px;font-size:11px;color:rgba(200,203,212,.45);margin-top:10px;animation:hb 2.5s ease-in-out infinite;flex-shrink:0}
 @keyframes hb{0%,100%{opacity:.3}50%{opacity:.8}}
-.ans-lbl{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#6EE89B;margin-bottom:12px}
+/* Back face layout */
+.cf-back-inner{width:100%;flex:1;display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.ans-lbl{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#6EE89B;margin-bottom:10px;flex-shrink:0}
+/* Scrollable answer area — shows scroll indicator when overflow */
+.c-ans-scroll{flex:1;overflow-y:auto;min-height:0;width:100%;position:relative;padding-right:2px}
+.c-ans-scroll::-webkit-scrollbar{width:4px}
+.c-ans-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,.04);border-radius:2px}
+.c-ans-scroll::-webkit-scrollbar-thumb{background:rgba(110,232,155,.4);border-radius:2px}
+/* Fade-out gradient at bottom when scrollable */
+.ans-scroll-fade{position:absolute;bottom:0;left:0;right:0;height:28px;background:linear-gradient(transparent,#091A0F);pointer-events:none;opacity:0;transition:opacity .2s}
+.ans-scroll-fade.show{opacity:1}
 .c-ans{width:100%}
-.c-ans .abig{font-size:clamp(15px,2.5vw,22px);font-weight:600;line-height:1.6;color:#E0FFE8;text-align:center}
-.c-ans ul{list-style:none;padding:0;text-align:left;width:100%;max-height:240px;overflow-y:auto}
-.c-ans ul::-webkit-scrollbar{width:4px}
-.c-ans ul::-webkit-scrollbar-track{background:rgba(255,255,255,.04);border-radius:2px}
-.c-ans ul::-webkit-scrollbar-thumb{background:rgba(110,232,155,.3);border-radius:2px}
-.c-ans ul li{padding:5px 0 5px 20px;position:relative;border-bottom:1px solid rgba(110,232,155,.07);font-size:13px;color:#D8F8E0;line-height:1.5}
+.c-ans .abig{font-size:clamp(15px,2.5vw,20px);font-weight:600;line-height:1.5;color:#E0FFE8;text-align:center}
+.c-ans ul{list-style:none;padding:0;text-align:left;width:100%}
+.c-ans ul li{padding:5px 0 5px 18px;position:relative;border-bottom:1px solid rgba(110,232,155,.07);font-size:12px;color:#D8F8E0;line-height:1.45}
 .c-ans ul li:last-child{border-bottom:none}
 .c-ans ul li::before{content:'✦';position:absolute;left:0;top:7px;color:var(--gold);font-size:8px}
-.c-ans .note{font-size:11px;color:rgba(200,203,212,.5);margin-top:10px;line-height:1.6;font-style:italic;text-align:center;padding:0 8px}
+.c-ans .note{font-size:11px;color:rgba(200,203,212,.5);margin-top:8px;line-height:1.6;font-style:italic;text-align:center;padding:0 4px}
 .c-ans a{color:var(--gold);text-decoration:underline;cursor:pointer}
-.c-verdict{display:flex;gap:8px;margin-top:16px;width:100%;justify-content:center;flex-wrap:wrap}
-.vbtn{padding:10px 20px;border-radius:8px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;border:2px solid;transition:all .18s;letter-spacing:.1px;flex:1;max-width:180px}
+.c-verdict{display:flex;gap:8px;margin-top:10px;width:100%;justify-content:center;flex-wrap:wrap;flex-shrink:0}
+.vbtn{padding:9px 18px;border-radius:8px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;border:2px solid;transition:all .18s;letter-spacing:.1px;flex:1;max-width:160px}
 .vy{background:var(--ok2);border-color:var(--ok);color:#6EE89B}
 .vy:hover{background:rgba(34,134,58,.32);transform:scale(1.03)}
 .vn{background:var(--no2);border-color:var(--no);color:#FF8A80}
@@ -241,16 +251,36 @@ header{background:linear-gradient(180deg,rgba(7,17,31,.99) 0%,rgba(13,30,53,.97)
 .tip-c a{color:var(--gold);text-decoration:none}
 .tip-c a:hover{text-decoration:underline}
 
-/* LEARN SECTION */
-.learn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:20px}
-.learn-card{background:linear-gradient(145deg,rgba(27,58,107,.25),rgba(7,17,31,.6));border:1px solid rgba(255,215,0,.12);border-radius:12px;overflow:hidden;transition:transform .2s,box-shadow .2s}
-.learn-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
-.lc-thumb{position:relative;width:100%;padding-bottom:56.25%;background:rgba(0,0,0,.4);overflow:hidden}
-.lc-thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.lc-body{padding:16px}
-.lc-tag{font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:var(--gold);background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.2);padding:2px 8px;border-radius:3px;display:inline-block;margin-bottom:8px}
-.lc-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:6px;line-height:1.4}
-.lc-desc{font-size:11px;color:var(--silver);line-height:1.65}
+/* LEARN SECTION — Reference Cards */
+.learn-ref-card{background:linear-gradient(145deg,rgba(27,58,107,.22),rgba(7,17,31,.5));border:1px solid rgba(255,215,0,.12);border-radius:12px;overflow:hidden;margin-bottom:14px}
+.lrc-header{background:linear-gradient(90deg,rgba(27,58,107,.5),rgba(7,17,31,.4));border-bottom:1px solid rgba(255,215,0,.14);padding:11px 16px;font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:.5px;color:var(--gold)}
+.lrc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1px;background:rgba(255,255,255,.04)}
+.lrc-item{background:rgba(7,17,31,.6);padding:12px 14px;display:flex;flex-direction:column;gap:3px}
+.lrc-val{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:var(--gold);line-height:1}
+.lrc-label{font-size:10px;color:var(--silver);line-height:1.4}
+.lrc-rows{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.04)}
+.lrc-row{background:rgba(7,17,31,.6);padding:10px 16px;display:flex;gap:12px;align-items:flex-start}
+.lrc-amend{font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;color:var(--gold);background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.2);border-radius:4px;padding:2px 8px;white-space:nowrap;flex-shrink:0;min-width:48px;text-align:center;align-self:center}
+.lrc-name{font-size:12px;font-weight:700;color:var(--white);white-space:nowrap;flex-shrink:0;min-width:110px}
+.lrc-adesc{font-size:11px;color:var(--silver);line-height:1.55;flex:1}
+/* Branches */
+.lrc-branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:rgba(255,255,255,.04)}
+.lrc-branch{background:rgba(7,17,31,.6);padding:14px 16px}
+.lrc-branch-title{font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;margin-bottom:2px}
+.lrc-branch-leg .lrc-branch-title{color:#80AAFF}
+.lrc-branch-exe .lrc-branch-title{color:var(--gold)}
+.lrc-branch-jud .lrc-branch-title{color:#CC99FF}
+.lrc-branch-sub{font-size:10px;color:var(--silver);margin-bottom:8px;font-style:italic}
+.lrc-branch-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:4px}
+.lrc-branch-list li{font-size:11px;color:var(--silver);line-height:1.45;padding-left:12px;position:relative}
+.lrc-branch-list li::before{content:'·';position:absolute;left:2px;color:var(--gold)}
+/* Timeline */
+.lrc-timeline{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.04)}
+.lrc-te{background:rgba(7,17,31,.6);padding:9px 16px;display:flex;gap:14px;align-items:flex-start}
+.lrc-yr{font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;color:var(--gold);min-width:52px;flex-shrink:0;padding-top:1px}
+.lrc-ev{font-size:11px;color:var(--silver);line-height:1.5;flex:1}
+
+/* LEARN SECTION — Article styles */
 .learn-article{background:linear-gradient(145deg,rgba(27,58,107,.2),rgba(7,17,31,.5));border:1px solid rgba(255,215,0,.1);border-radius:11px;padding:20px;margin-bottom:14px}
 .learn-article h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .learn-article h4{font-size:14px;font-weight:700;color:var(--white);margin:14px 0 6px}
@@ -274,13 +304,14 @@ footer a:hover{text-decoration:underline}
 .disc{margin-top:10px;font-size:10px;color:rgba(180,190,220,.38);max-width:660px;margin-left:auto;margin-right:auto;line-height:1.7}
 
 @media(max-width:580px){
-  .cf{padding:18px 14px}
-  .c-q{font-size:15px}
+  .cf{padding:16px 12px}
+  .c-q{font-size:14px}
   .tab{min-width:70px;padding:8px 4px;font-size:10px}
   .tab .ti{font-size:14px}
   .hst{min-width:65px;padding:7px 8px}
   header{position:static}
-  .vbtn{font-size:12px;padding:9px 12px}
+  .vbtn{font-size:11px;padding:8px 10px}
+  .lrc-name{min-width:80px}
 }
 </style>
 </head>
@@ -289,14 +320,14 @@ footer a:hover{text-decoration:underline}
 <div id="stars"></div>
 
 <header>
-  <div class="top-bar" id="topBar">🇺🇸 OFFICIAL 2025 NATURALIZATION CIVICS TEST · 128 QUESTIONS · 20 ASKED · 12 TO PASS · FREE · NO ACCOUNT 🇺🇸</div>
+  <div class="top-bar" id="topBar">🇺🇸 THIS IS THE CURRENT TEST (2025) — EFFECTIVE OCT 20, 2025 · 128 QUESTIONS · 20 ASKED · 12 TO PASS · FREE 🇺🇸</div>
   <div class="wrap">
     <div class="h-inner">
       <div class="h-brand">
         <div class="eagle">🦅</div>
         <div>
-          <div class="h-title">U.S. Naturalization Civics Test <em>2025</em> <span class="new-pill">UPDATED</span></div>
-          <div class="h-sub" id="hSub">Free study guide · All 128 official USCIS questions · No account needed</div>
+          <div class="h-title">U.S. Naturalization Civics Test <em>2025</em> <span class="new-pill">CURRENT TEST</span></div>
+          <div class="h-sub" id="hSub">The latest version · All 128 official USCIS questions · Free, no account needed</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
@@ -318,8 +349,7 @@ footer a:hover{text-decoration:underline}
 <div class="wrap" style="padding-top:20px;padding-bottom:36px">
 
 <div class="alert" id="alertBox">
-  <strong>⚠️ <span data-en="Important:" data-es="Importante:">Important:</span></strong>
-  <span id="alertText">The 2025 Naturalization Civics Test applies to anyone who filed Form N-400 <strong>on or after October 20, 2025</strong>. If you filed before that date, you take the 2008 version (100 questions, 6/10 to pass). Some answers change with elections — always <a href="https://www.uscis.gov/citizenship/testupdates" target="_blank">verify current officials at uscis.gov/citizenship/testupdates</a> before your interview.</span>
+  <strong>✅ You're in the right place — this is the CURRENT test.</strong> The 2025 Naturalization Civics Test became effective <strong>October 20, 2025</strong> and is the version administered today. It applies to anyone who filed Form N-400 on or after that date. If you filed before October 20, 2025, you take the older 2008 version (100 questions). Some answers change with elections — always <a href="https://www.uscis.gov/citizenship/testupdates" target="_blank">verify current officials at uscis.gov/citizenship/testupdates</a> before your interview.
 </div>
 
 <div class="score-bar">
@@ -354,7 +384,7 @@ footer a:hover{text-decoration:underline}
     <button class="cp cp-geo" onclick="setCat('E',this)" data-en="Symbols/Holidays" data-es="Símbolos">Symbols/Holidays</button>
   </div>
   <div class="card-area">
-    <div style="position:relative" id="fcWrap">
+    <div class="fc-wrap" id="fcWrap">
       <div class="fc" id="mainCard" onclick="flipC('main')">
         <div class="cf cf-front" id="cFront">
           <div class="c-meta">
@@ -366,8 +396,13 @@ footer a:hover{text-decoration:underline}
           <div class="flip-hint">👆 <span data-en="Tap to reveal answer" data-es="Toca para ver respuesta">Tap to reveal answer</span></div>
         </div>
         <div class="cf cf-back" id="cBack">
-          <div class="ans-lbl">✦ <span data-en="OFFICIAL ANSWER" data-es="RESPUESTA OFICIAL">OFFICIAL ANSWER</span> ✦</div>
-          <div class="c-ans" id="cAns"></div>
+          <div class="cf-back-inner">
+            <div class="ans-lbl">✦ <span data-en="OFFICIAL ANSWER" data-es="RESPUESTA OFICIAL">OFFICIAL ANSWER</span> ✦</div>
+            <div class="c-ans-scroll" id="cAnsScroll" onscroll="updateFade(this,'cAnsFade')">
+              <div class="c-ans" id="cAns"></div>
+            </div>
+            <div class="ans-scroll-fade" id="cAnsFade"></div>
+          </div>
           <div class="c-verdict">
             <button class="vbtn vy" onclick="event.stopPropagation();markC(true)" data-en="✅ Got It Right" data-es="✅ Correcto">✅ Got It Right</button>
             <button class="vbtn vn" onclick="event.stopPropagation();markC(false)" data-en="❌ Got It Wrong" data-es="❌ Incorrecto">❌ Got It Wrong</button>
@@ -386,27 +421,36 @@ footer a:hover{text-decoration:underline}
 
 <!-- ===== RANDOM SECTION ===== -->
 <div class="sec" id="sec-rand">
-  <div style="position:relative" id="rndWrap">
-    <div class="fc" id="rndCard" onclick="flipC('rnd')">
+  <div class="ic" style="margin-bottom:14px;padding:14px 18px">
+    <p style="font-size:12px;color:var(--silver);margin:0">Practice with questions from all 128 in random order. Press the button below to get a random question — think of your answer, flip the card to check, then mark right or wrong.</p>
+  </div>
+  <div class="c-ctrl" style="margin-bottom:14px">
+    <button class="cbtn cb-rnd" onclick="doRnd()" style="font-size:14px;padding:13px 28px;flex:0 0 auto">🎲 Random Question</button>
+    <button class="cbtn cb-flip" id="rndFlipBtn" onclick="flipC('rnd')" style="display:none">↻ Flip Card</button>
+  </div>
+  <div class="fc-wrap" id="rndWrap">
+    <div class="fc" id="rndCard" onclick="rndCardClick()">
       <div class="cf cf-front" id="rFront">
-        <div class="c-meta"><span class="c-num" id="rNum">?</span><span class="c-cat" id="rCat"></span></div>
-        <div class="c-q" id="rQ" data-en="Press 'Random Question' to begin!" data-es="¡Presiona 'Pregunta Aleatoria' para comenzar!">Press "Random Question" to begin!</div>
-        <div class="flip-hint">👆 <span data-en="Tap to reveal answer" data-es="Toca para ver respuesta">Tap to reveal answer</span></div>
+        <div class="c-meta"><span class="c-num" id="rNum"></span><span class="c-cat" id="rCat"></span></div>
+        <div class="c-q" id="rQ" style="color:var(--silver);font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:400;display:block">Press "Random Question" above to begin!</div>
+        <div class="flip-hint" id="rFlipHint" style="display:none">👆 Tap card to reveal answer</div>
       </div>
       <div class="cf cf-back" id="rBack">
-        <div class="ans-lbl">✦ <span data-en="OFFICIAL ANSWER" data-es="RESPUESTA OFICIAL">OFFICIAL ANSWER</span> ✦</div>
-        <div class="c-ans" id="rAns"></div>
+        <div class="cf-back-inner">
+          <div class="ans-lbl">✦ OFFICIAL ANSWER ✦</div>
+          <div class="c-ans-scroll" id="rAnsScroll" onscroll="updateFade(this,'rAnsFade')">
+            <div class="c-ans" id="rAns"></div>
+          </div>
+          <div class="ans-scroll-fade" id="rAnsFade"></div>
+        </div>
         <div class="c-verdict">
-          <button class="vbtn vy" onclick="event.stopPropagation();markRnd(true)" data-en="✅ Got It Right" data-es="✅ Correcto">✅ Got It Right</button>
-          <button class="vbtn vn" onclick="event.stopPropagation();markRnd(false)" data-en="❌ Got It Wrong" data-es="❌ Incorrecto">❌ Got It Wrong</button>
+          <button class="vbtn vy" onclick="event.stopPropagation();markRnd(true)">✅ Got It Right</button>
+          <button class="vbtn vn" onclick="event.stopPropagation();markRnd(false)">❌ Got It Wrong</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="c-ctrl" style="margin-top:10px">
-    <button class="cbtn cb-rnd" onclick="doRnd()" style="font-size:14px;padding:12px 24px">🎲 <span data-en="Random Question" data-es="Pregunta Aleatoria">Random Question</span></button>
-    <button class="cbtn cb-flip" id="rndFlipBtn" onclick="flipC('rnd')" style="display:none">↻ <span data-en="Flip" data-es="Voltear">Flip</span></button>
-  </div>
+  <div class="kbd-hint" style="margin-top:10px"><span class="kbd">Space</span> flip &nbsp;<span class="kbd">Y</span>/<span class="kbd">N</span> mark &nbsp;<span class="kbd">R</span> new random</div>
 </div>
 
 <!-- ===== TEST SECTION ===== -->
@@ -442,6 +486,7 @@ footer a:hover{text-decoration:underline}
     <div class="prog-lbl"><span data-en="Test Progress" data-es="Progreso">Test Progress</span><span id="tPL">Q 1 of 20</span></div>
     <div class="dots-wrap" id="tDots"></div>
     <div style="position:relative" id="testWrap">
+      <div class="fc-wrap">
       <div class="fc" id="testCard" onclick="flipC('test')">
         <div class="cf cf-front">
           <div class="c-meta"><span class="c-num" id="tCN">Test Q 1</span><span class="c-cat" id="tCat"></span></div>
@@ -449,15 +494,22 @@ footer a:hover{text-decoration:underline}
           <div class="flip-hint">👆 <span data-en="Think of your answer, then tap" data-es="Piense su respuesta, luego toque">Think of your answer, then tap</span></div>
         </div>
         <div class="cf cf-back">
-          <div class="ans-lbl">✦ <span data-en="OFFICIAL ANSWER" data-es="RESPUESTA OFICIAL">OFFICIAL ANSWER</span> ✦</div>
-          <div class="c-ans" id="tAns"></div>
+          <div class="cf-back-inner">
+            <div class="ans-lbl">✦ <span data-en="OFFICIAL ANSWER" data-es="RESPUESTA OFICIAL">OFFICIAL ANSWER</span> ✦</div>
+            <div class="c-ans-scroll" id="tAnsScroll" onscroll="updateFade(this,'tAnsFade')">
+              <div class="c-ans" id="tAns"></div>
+            </div>
+            <div class="ans-scroll-fade" id="tAnsFade"></div>
+          </div>
           <div class="c-verdict">
             <button class="vbtn vy" onclick="event.stopPropagation();markT(true)" data-en="✅ I Said It Correctly" data-es="✅ Lo Dije Bien">✅ I Said It Correctly</button>
             <button class="vbtn vn" onclick="event.stopPropagation();markT(false)" data-en="❌ I Got It Wrong" data-es="❌ Me Equivoqué">❌ I Got It Wrong</button>
           </div>
         </div>
       </div>
+      </div>
     </div>
+    <div class="kbd-hint" style="margin-top:10px"><span class="kbd">Space</span> flip &nbsp;<span class="kbd">Y</span>/<span class="kbd">N</span> mark</div>
   </div>
   <div class="t-result" id="tResult">
     <span class="re" id="rEmoji">🦅</span>
@@ -508,32 +560,158 @@ footer a:hover{text-decoration:underline}
     </ul>
   </div>
 
-  <h3 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);margin-bottom:14px">🎬 <span data-en="Official USCIS Study Videos" data-es="Videos Oficiales de Estudio de USCIS">Official USCIS Study Videos</span></h3>
-  <p style="font-size:12px;color:var(--silver);margin-bottom:16px" data-en="These official USCIS and educational videos will help you learn the material and hear the correct pronunciation of answers out loud — critical for an oral test." data-es="Estos videos oficiales de USCIS y educativos te ayudarán a aprender el material y escuchar la pronunciación correcta de las respuestas en voz alta — fundamental para una prueba oral.">These official USCIS and educational videos will help you learn the material and hear the correct pronunciation of answers out loud — critical for an oral test.</p>
-  <div class="learn-grid">
-    <div class="learn-card">
-      <div class="lc-thumb"><iframe src="https://www.youtube.com/embed/ONKwRSxVLbk" title="USCIS Civics Test 2025" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="lc-body"><span class="lc-tag">USCIS Official</span><div class="lc-title">2025 Civics Test — Official USCIS Overview</div><div class="lc-desc" data-en="Official USCIS video explaining the 2025 naturalization civics test format, what to expect, and how to prepare." data-es="Video oficial de USCIS que explica el formato de la prueba de civismo de naturalización 2025.">Official USCIS video explaining the 2025 naturalization civics test format, what to expect, and how to prepare.</div></div>
+  <h3 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);margin-bottom:14px">📖 <span data-en="Quick-Study Reference — Key Facts for Every Topic" data-es="Referencia Rápida — Hechos Clave">Quick-Study Reference — Key Facts for Every Topic</span></h3>
+  <p style="font-size:12px;color:var(--silver);margin-bottom:16px" data-en="Since this is an oral test, the fastest way to prepare is to know the most testable facts cold. These cheat-sheets cover every topic category — bookmark this tab and review often." data-es="Como esta es una prueba oral, la forma más rápida de prepararse es conocer los hechos más importantes. Estas hojas de referencia cubren cada categoría de tema.">Since this is an oral test, the fastest way to prepare is to know the most testable facts cold. These reference sheets cover every topic category — review them often alongside the flashcards.</p>
+
+  <!-- NUMBERS CHEATSHEET -->
+  <div class="learn-ref-card">
+    <div class="lrc-header">🔢 Critical Numbers — Memorize These First</div>
+    <div class="lrc-grid">
+      <div class="lrc-item"><span class="lrc-val">128</span><span class="lrc-label">Total questions in pool</span></div>
+      <div class="lrc-item"><span class="lrc-val">20</span><span class="lrc-label">Questions asked per test</span></div>
+      <div class="lrc-item"><span class="lrc-val">12</span><span class="lrc-label">Correct answers to pass</span></div>
+      <div class="lrc-item"><span class="lrc-val">9</span><span class="lrc-label">Wrong answers = fail</span></div>
+      <div class="lrc-item"><span class="lrc-val">100</span><span class="lrc-label">U.S. Senators (2 per state)</span></div>
+      <div class="lrc-item"><span class="lrc-val">435</span><span class="lrc-label">House Representatives</span></div>
+      <div class="lrc-item"><span class="lrc-val">27</span><span class="lrc-label">Constitutional amendments</span></div>
+      <div class="lrc-item"><span class="lrc-val">9</span><span class="lrc-label">Supreme Court justices</span></div>
+      <div class="lrc-item"><span class="lrc-val">6 yrs</span><span class="lrc-label">Senator term length</span></div>
+      <div class="lrc-item"><span class="lrc-val">2 yrs</span><span class="lrc-label">House rep term length</span></div>
+      <div class="lrc-item"><span class="lrc-val">4 yrs</span><span class="lrc-label">President term length</span></div>
+      <div class="lrc-item"><span class="lrc-val">2 terms</span><span class="lrc-label">Max presidential terms (22nd Amend)</span></div>
+      <div class="lrc-item"><span class="lrc-val">50</span><span class="lrc-label">States</span></div>
+      <div class="lrc-item"><span class="lrc-val">13</span><span class="lrc-label">Original colonies/states</span></div>
+      <div class="lrc-item"><span class="lrc-val">5</span><span class="lrc-label">Justices needed to decide a case</span></div>
+      <div class="lrc-item"><span class="lrc-val">Life</span><span class="lrc-label">Supreme Court justice tenure</span></div>
     </div>
-    <div class="learn-card">
-      <div class="lc-thumb"><iframe src="https://www.youtube.com/embed/oqMtFZp5bUQ" title="100 Civics Questions" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="lc-body"><span class="lc-tag">Study Guide</span><div class="lc-title">All Civics Questions — Read Aloud Practice</div><div class="lc-desc" data-en="Practice hearing all the civics questions and answers read aloud in clear English. Perfect for oral test preparation." data-es="Practica escuchar todas las preguntas y respuestas de educación cívica leídas en voz alta en inglés claro.">Practice hearing all the civics questions and answers read aloud in clear English. Perfect for oral test preparation.</div></div>
+  </div>
+
+  <!-- AMENDMENTS CHEATSHEET -->
+  <div class="learn-ref-card">
+    <div class="lrc-header">📜 Key Amendments — The Most-Tested Ones</div>
+    <div class="lrc-rows">
+      <div class="lrc-row"><span class="lrc-amend">1st</span><span class="lrc-adesc">Freedom of speech, religion, press, assembly, petition</span></div>
+      <div class="lrc-row"><span class="lrc-amend">2nd</span><span class="lrc-adesc">Right to bear arms</span></div>
+      <div class="lrc-row"><span class="lrc-amend">13th</span><span class="lrc-adesc">Abolished slavery (1865)</span></div>
+      <div class="lrc-row"><span class="lrc-amend">14th</span><span class="lrc-adesc">Citizenship for all born or naturalized in the U.S.</span></div>
+      <div class="lrc-row"><span class="lrc-amend">15th</span><span class="lrc-adesc">Citizens cannot be denied the vote based on race (1870)</span></div>
+      <div class="lrc-row"><span class="lrc-amend">16th</span><span class="lrc-adesc">Congress can collect income tax</span></div>
+      <div class="lrc-row"><span class="lrc-amend">19th</span><span class="lrc-adesc">Women's right to vote (1920)</span></div>
+      <div class="lrc-row"><span class="lrc-amend">22nd</span><span class="lrc-adesc">President limited to 2 terms</span></div>
+      <div class="lrc-row"><span class="lrc-amend">24th</span><span class="lrc-adesc">No poll tax required to vote</span></div>
+      <div class="lrc-row"><span class="lrc-amend">26th</span><span class="lrc-adesc">Voting age lowered to 18</span></div>
     </div>
-    <div class="learn-card">
-      <div class="lc-thumb"><iframe src="https://www.youtube.com/embed/2r8_gBgfJFY" title="American Government Explained" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="lc-body"><span class="lc-tag">American Government</span><div class="lc-title">The Three Branches of Government Explained</div><div class="lc-desc" data-en="A clear, visual explanation of how the three branches of the U.S. government work — one of the most tested topics." data-es="Una explicación visual clara de cómo funcionan las tres ramas del gobierno de EE. UU.">A clear, visual explanation of how the three branches of the U.S. government work — one of the most tested topics.</div></div>
+  </div>
+
+  <!-- GOVERNMENT STRUCTURE -->
+  <div class="learn-ref-card">
+    <div class="lrc-header">🏛️ The Three Branches — Structure at a Glance</div>
+    <div class="lrc-branches">
+      <div class="lrc-branch lrc-branch-leg">
+        <div class="lrc-branch-title">⚖️ Legislative</div>
+        <div class="lrc-branch-sub">Congress = Senate + House</div>
+        <ul class="lrc-branch-list">
+          <li>Senate: 100 members, 6-year terms</li>
+          <li>House: 435 members, 2-year terms</li>
+          <li>Powers: Write laws, declare war, make budget</li>
+          <li>Speaker of the House leads the House</li>
+        </ul>
+      </div>
+      <div class="lrc-branch lrc-branch-exe">
+        <div class="lrc-branch-title">🦅 Executive</div>
+        <div class="lrc-branch-sub">President + Cabinet</div>
+        <ul class="lrc-branch-list">
+          <li>4-year term, max 2 terms (22nd Amend.)</li>
+          <li>Powers: Sign/veto laws, command military, appoint judges</li>
+          <li>Cabinet advises the President</li>
+          <li>VP becomes President if President cannot serve</li>
+        </ul>
+      </div>
+      <div class="lrc-branch lrc-branch-jud">
+        <div class="lrc-branch-title">⚖️ Judicial</div>
+        <div class="lrc-branch-sub">Supreme Court + Federal Courts</div>
+        <ul class="lrc-branch-list">
+          <li>9 justices, serve for life</li>
+          <li>5 justices needed to decide a case</li>
+          <li>Reviews/interprets laws for constitutionality</li>
+          <li>Appointed by President, confirmed by Senate</li>
+        </ul>
+      </div>
     </div>
-    <div class="learn-card">
-      <div class="lc-thumb"><iframe src="https://www.youtube.com/embed/bO7FQsCcbD8" title="US History for Citizenship" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="lc-body"><span class="lc-tag">American History</span><div class="lc-title">U.S. History Overview for the Citizenship Test</div><div class="lc-desc" data-en="Key events in American history covered on the civics test — from the Revolution through the Civil War to the 20th century." data-es="Eventos clave en la historia americana cubiertos en la prueba de civismo.">Key events in American history covered on the civics test — from the Revolution through the Civil War to the 20th century.</div></div>
+  </div>
+
+  <!-- HISTORY TIMELINE -->
+  <div class="learn-ref-card">
+    <div class="lrc-header">📅 American History Timeline — Key Dates</div>
+    <div class="lrc-timeline">
+      <div class="lrc-te"><span class="lrc-yr">1776</span><span class="lrc-ev">Declaration of Independence adopted (July 4) — Thomas Jefferson wrote it</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1781–83</span><span class="lrc-ev">American Revolution ends; U.S. gains independence from Britain</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1787</span><span class="lrc-ev">U.S. Constitution written at Constitutional Convention in Philadelphia</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1791</span><span class="lrc-ev">Bill of Rights (first 10 amendments) ratified</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1803</span><span class="lrc-ev">Louisiana Purchase — U.S. buys territory from France (Jefferson)</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1812</span><span class="lrc-ev">War of 1812 — fought against Britain (Madison was president)</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1861–65</span><span class="lrc-ev">Civil War — North vs. South; slavery was the central cause</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1863</span><span class="lrc-ev">Emancipation Proclamation — Lincoln freed slaves in Confederate states</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1865</span><span class="lrc-ev">13th Amendment — slavery abolished; Civil War ends</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1870</span><span class="lrc-ev">15th Amendment — all men (regardless of race) get the right to vote</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1917–18</span><span class="lrc-ev">World War I — U.S. entered because Germany attacked U.S. ships</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1920</span><span class="lrc-ev">19th Amendment — women gain the right to vote</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1929–39</span><span class="lrc-ev">Great Depression — longest economic recession in modern history</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1941–45</span><span class="lrc-ev">World War II — U.S. entered after Japan attacked Pearl Harbor (Dec 7, 1941)</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1950–53</span><span class="lrc-ev">Korean War</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1954–75</span><span class="lrc-ev">Vietnam War</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1960s</span><span class="lrc-ev">Civil Rights Movement — Martin Luther King Jr. was a key leader</span></div>
+      <div class="lrc-te"><span class="lrc-yr">1991</span><span class="lrc-ev">Persian Gulf War</span></div>
+      <div class="lrc-te"><span class="lrc-yr">2001</span><span class="lrc-ev">September 11 attacks; War on Terror begins</span></div>
     </div>
-    <div class="learn-card">
-      <div class="lc-thumb"><iframe src="https://www.youtube.com/embed/yN3hVGXXfms" title="US Constitution for Beginners" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="lc-body"><span class="lc-tag">The Constitution</span><div class="lc-title">The U.S. Constitution Explained Simply</div><div class="lc-desc" data-en="A beginner-friendly explanation of the U.S. Constitution, the Bill of Rights, and the amendment process — all tested on the civics exam." data-es="Una explicación sencilla de la Constitución de EE. UU., la Carta de Derechos y el proceso de enmienda.">A beginner-friendly explanation of the U.S. Constitution, the Bill of Rights, and the amendment process.</div></div>
+  </div>
+
+  <!-- FOUNDING FATHERS CHEATSHEET -->
+  <div class="learn-ref-card">
+    <div class="lrc-header">👥 Founding Fathers — Who Did What</div>
+    <div class="lrc-rows">
+      <div class="lrc-row"><span class="lrc-name">George Washington</span><span class="lrc-adesc">"Father of Our Country" · 1st President · General of the Continental Army · Presided over Constitutional Convention</span></div>
+      <div class="lrc-row"><span class="lrc-name">Thomas Jefferson</span><span class="lrc-adesc">Wrote the Declaration of Independence · 3rd President · Louisiana Purchase · 1st Secretary of State</span></div>
+      <div class="lrc-row"><span class="lrc-name">James Madison</span><span class="lrc-adesc">"Father of the Constitution" · 4th President · Wrote Federalist Papers · President during War of 1812</span></div>
+      <div class="lrc-row"><span class="lrc-name">Alexander Hamilton</span><span class="lrc-adesc">1st Secretary of the Treasury · Wrote Federalist Papers · Established First Bank of the U.S.</span></div>
+      <div class="lrc-row"><span class="lrc-name">Benjamin Franklin</span><span class="lrc-adesc">Inventor · 1st Postmaster General · U.S. diplomat · Helped write Declaration of Independence · Founded free public libraries</span></div>
+      <div class="lrc-row"><span class="lrc-name">Abraham Lincoln</span><span class="lrc-adesc">16th President · Freed the slaves (Emancipation Proclamation) · Led U.S. during Civil War · "Saved (preserved) the Union"</span></div>
     </div>
-    <div class="learn-card">
-      <div class="lc-thumb"><iframe src="https://www.youtube.com/embed/YDZk3PGbQa8" title="US Naturalization Interview Tips" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="lc-body"><span class="lc-tag">Interview Tips</span><div class="lc-title">What to Expect at Your Naturalization Interview</div><div class="lc-desc" data-en="Tips for the full naturalization interview — what to bring, what the officer will ask, and how to speak confidently during the civics test." data-es="Consejos para la entrevista de naturalización completa — qué llevar, qué preguntará el oficial, y cómo hablar con confianza.">Tips for the full naturalization interview — what to bring, what the officer will ask, and how to speak confidently.</div></div>
+  </div>
+
+  <!-- RIGHTS & EXEMPTIONS -->
+  <div class="learn-ref-card">
+    <div class="lrc-header">🗳️ Voting Rights Amendments</div>
+    <div class="lrc-rows">
+      <div class="lrc-row"><span class="lrc-amend">15th</span><span class="lrc-adesc">After the Civil War — all men regardless of race can vote (1870)</span></div>
+      <div class="lrc-row"><span class="lrc-amend">19th</span><span class="lrc-adesc">After World War I — women gain the right to vote (1920)</span></div>
+      <div class="lrc-row"><span class="lrc-amend">24th</span><span class="lrc-adesc">No poll tax required to vote</span></div>
+      <div class="lrc-row"><span class="lrc-amend">26th</span><span class="lrc-adesc">Citizens 18 and older can vote</span></div>
+    </div>
+  </div>
+
+  <!-- LANGUAGE EXEMPTIONS -->
+  <div class="learn-ref-card">
+    <div class="lrc-header">🌐 Age & Language Exemptions — Do You Qualify?</div>
+    <div class="lrc-rows">
+      <div class="lrc-row"><span class="lrc-name">65/20 Senior ⭐</span><span class="lrc-adesc">Age 65+, permanent resident 20+ years → Study only 20 questions (⭐), 10 asked, need 6 correct. May test in language of choice.</span></div>
+      <div class="lrc-row"><span class="lrc-name">55/15 Exemption</span><span class="lrc-adesc">Age 55+, permanent resident 15+ years → May take civics test in native language with interpreter.</span></div>
+      <div class="lrc-row"><span class="lrc-name">50/20 Exemption</span><span class="lrc-adesc">Age 50+, permanent resident 20+ years → May take civics test in native language with interpreter.</span></div>
+    </div>
+  </div>
+
+  <!-- SYMBOLS -->
+  <div class="learn-ref-card">
+    <div class="lrc-header">🇺🇸 Symbols, Holidays & Landmarks</div>
+    <div class="lrc-rows">
+      <div class="lrc-row"><span class="lrc-name">Flag</span><span class="lrc-adesc">13 stripes (original colonies) · 50 stars (states) · Red, white, and blue</span></div>
+      <div class="lrc-row"><span class="lrc-name">National Anthem</span><span class="lrc-adesc">"The Star-Spangled Banner" — written by Francis Scott Key during War of 1812</span></div>
+      <div class="lrc-row"><span class="lrc-name">Statue of Liberty</span><span class="lrc-adesc">Located in New York Harbor (New York/New Jersey) — gift from France · Symbol of freedom and democracy</span></div>
+      <div class="lrc-row"><span class="lrc-name">E Pluribus Unum</span><span class="lrc-adesc">"Out of many, one" — traditional motto on the Great Seal of the United States</span></div>
+      <div class="lrc-row"><span class="lrc-name">Capital</span><span class="lrc-adesc">Washington, D.C. — where Congress meets (Capitol Building)</span></div>
+      <div class="lrc-row"><span class="lrc-name">Independence Day</span><span class="lrc-adesc">July 4 — celebrates the Declaration of Independence (1776)</span></div>
+      <div class="lrc-row"><span class="lrc-name">Thanksgiving</span><span class="lrc-adesc">Fourth Thursday in November</span></div>
+      <div class="lrc-row"><span class="lrc-name">Presidents Day</span><span class="lrc-adesc">February — honors Washington (Feb 22) and Lincoln (Feb 12)</span></div>
     </div>
   </div>
 
@@ -767,7 +945,8 @@ let streak=parseInt(localStorage.getItem('cv_streak')||'0');
 let curIdx=parseInt(localStorage.getItem('cv_idx')||'0');
 let curCat='all';
 let filteredQs=[...QS];
-let rndIdx=null,rndStarted=false;
+let rndIdx=null;
+let rndActive=false;
 let tQs=[],tIdx=0,tC=0,tW=0,isSr=false,tMissed=[];
 
 /* stars */
@@ -800,15 +979,20 @@ let tt;function toast(m,d=2200){const e=document.getElementById('toast');e.textC
 /* ================================================================ SECTIONS ================================================================ */
 function showSec(n){document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));document.getElementById('sec-'+n).classList.add('on');document.getElementById('tab-'+n).classList.add('on');if(n==='browse')renderList();if(n==='faq')renderFAQ();if(n==='flash')renderCard();applyLang();}
 
-/* ================================================================ CARD SIZING ================================================================ */
-function syncH(wrap,front,back){
-  // Remove fixed height so we can measure
-  [front,back].forEach(f=>{f.style.position='static';f.style.minHeight='';});
-  const fh=front.scrollHeight,bh=back.scrollHeight;
-  const h=Math.max(fh,bh,220)+'px';
-  wrap.style.height=h;
-  [front,back].forEach(f=>{f.style.position='absolute';f.style.minHeight=h;});
+/* ================================================================ CARD UTILITIES ================================================================ */
+function updateFade(scrollEl, fadeId){
+  const fade=document.getElementById(fadeId);
+  if(!fade)return;
+  const atBottom=scrollEl.scrollHeight-scrollEl.scrollTop<=scrollEl.clientHeight+4;
+  fade.classList.toggle('show',!atBottom&&scrollEl.scrollHeight>scrollEl.clientHeight);
 }
+function resetScroll(id){const el=document.getElementById(id);if(el)el.scrollTop=0;}
+function checkFade(scrollId, fadeId){
+  const el=document.getElementById(scrollId);
+  if(el)updateFade(el,fadeId);
+}
+// Legacy stub — no longer needed but keep to avoid errors from any stray calls
+function syncH(){}
 
 /* ================================================================ FLASHCARD MODE ================================================================ */
 function setCat(cat,btn){document.querySelectorAll('.cp').forEach(p=>p.classList.remove('on'));btn.classList.add('on');curCat=cat;filteredQs=cat==='all'?[...QS]:QS.filter(q=>q.sec===cat);curIdx=0;unflip('main');renderCard();}
@@ -826,7 +1010,7 @@ function renderCard(){
   const sc=scores[q.id];
   const fr=document.querySelector('#mainCard .cf-front');
   fr.style.borderColor=sc==='ok'?'rgba(34,134,58,.48)':sc==='no'?'rgba(192,57,43,.48)':'rgba(255,215,0,.18)';
-  setTimeout(()=>syncH(document.getElementById('fcWrap'),document.querySelector('#mainCard .cf-front'),document.querySelector('#mainCard .cf-back')),0);
+  setTimeout(()=>checkFade('cAnsScroll','cAnsFade'),50);
 }
 
 function buildAns(q){
@@ -834,8 +1018,13 @@ function buildAns(q){
   const note=q.note||'';
   const cnt=q.count||0;
   let html='';
-  if(cnt>0)html+=`<div style="font-size:11px;color:var(--gold);margin-bottom:8px;font-style:italic">${lang==='es'?`(Se requieren ${cnt} respuestas)`:`(${cnt} answers required)`}</div>`;
-  if(items.length===1&&!items[0].includes('<br>')&&items[0].length<120&&!items[0].includes('Answers will')){
+  // Header label: required count or "any one" hint
+  if(cnt>0){
+    html+=`<div style="font-size:11px;color:var(--gold);margin-bottom:8px;font-style:italic;text-align:center">⚠️ ${cnt} answers required — name ${cnt===2?'any two':cnt===3?'any three':'any five'} from the list below</div>`;
+  } else if(items.length>1&&!items[0].includes('Answers will')&&!items[0].includes('Visit ')){
+    html+=`<div style="font-size:11px;color:rgba(110,232,155,.7);margin-bottom:8px;font-style:italic;text-align:center">✓ Any <strong>one</strong> of these answers is correct</div>`;
+  }
+  if(items.length===1&&!items[0].includes('<br>')&&items[0].length<120&&!items[0].includes('Answers will')&&!items[0].includes('Visit ')){
     html+=`<div class="abig">${items[0]}</div>`;
   } else {
     html+='<ul>'+items.map(i=>`<li>${i}</li>`).join('')+'</ul>';
@@ -848,17 +1037,34 @@ function flipC(deck){const ids={main:'mainCard',rnd:'rndCard',test:'testCard'};d
 function unflip(deck){const ids={main:'mainCard',rnd:'rndCard',test:'testCard'};document.getElementById(ids[deck]).classList.remove('flip');}
 
 function nextC(){
+  const card=document.getElementById('mainCard');
+  const back=document.querySelector('#mainCard .cf-back');
+  card.style.transition='none';card.style.opacity='0';back.style.visibility='hidden';
+  card.classList.remove('flip');
   curIdx=(curIdx+1)%filteredQs.length;
   localStorage.setItem('cv_idx',curIdx.toString());
-  // Pre-set the next card content BEFORE unflipping so there's no flash
-  renderCardContent(); 
-  unflip('main');
+  renderCardContent();
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    back.style.visibility='';
+    card.style.transition='opacity 0.2s ease, transform 0.6s cubic-bezier(.4,0,.2,1)';
+    card.style.opacity='1';
+    setTimeout(()=>{card.style.transition='';},250);
+  }));
 }
 function prevC(){
+  const card=document.getElementById('mainCard');
+  const back=document.querySelector('#mainCard .cf-back');
+  card.style.transition='none';card.style.opacity='0';back.style.visibility='hidden';
+  card.classList.remove('flip');
   curIdx=(curIdx-1+filteredQs.length)%filteredQs.length;
   localStorage.setItem('cv_idx',curIdx.toString());
   renderCardContent();
-  unflip('main');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    back.style.visibility='';
+    card.style.transition='opacity 0.2s ease, transform 0.6s cubic-bezier(.4,0,.2,1)';
+    card.style.opacity='1';
+    setTimeout(()=>{card.style.transition='';},250);
+  }));
 }
 // renderCardContent sets content silently (no flip state change), renderCard is the full version
 function renderCardContent(){
@@ -874,61 +1080,80 @@ function renderCardContent(){
   const sc=scores[q.id];
   const fr=document.querySelector('#mainCard .cf-front');
   fr.style.borderColor=sc==='ok'?'rgba(34,134,58,.48)':sc==='no'?'rgba(192,57,43,.48)':'rgba(255,215,0,.18)';
-  setTimeout(()=>syncH(document.getElementById('fcWrap'),document.querySelector('#mainCard .cf-front'),document.querySelector('#mainCard .cf-back')),0);
+  resetScroll('cAnsScroll');
+  setTimeout(()=>checkFade('cAnsScroll','cAnsFade'),50);
 }
 
 function markC(ok){
   const q=filteredQs[curIdx];
-  // Only count as newly "seen" if not already in scores
-  const wasNew=!(q.id in scores);
   scores[q.id]=ok?'ok':'no';
-  if(ok){streak++;if(streak>0&&streak%5===0)toast(`🔥 ${streak}-${lang==='es'?'racha':'streak'}!`,2800);else toast(lang==='es'?'✅ ¡Correcto!':'✅ Got it right!');}
-  else{streak=0;toast(lang==='es'?'❌ ¡Sigue practicando!':'❌ Wrong — keep practicing!');}
+  if(ok){streak++;if(streak>0&&streak%5===0)toast(`🔥 ${streak}-streak!`,2800);else toast('✅ Got it right!');}
+  else{streak=0;toast('❌ Wrong — keep practicing!');}
   saveS();updateUI();
-  // Navigate THEN unflip (so next card content sets before visible unflip)
+  // Fully hide entire card while we swap content and unflip
+  const card=document.getElementById('mainCard');
+  const backFace=document.querySelector('#mainCard .cf-back');
+  card.style.transition='none';
+  card.style.opacity='0';
+  backFace.style.visibility='hidden';
   const nextIdx=(curIdx+1)%filteredQs.length;
   curIdx=nextIdx;
   localStorage.setItem('cv_idx',curIdx.toString());
-  renderCardContent(); // sets new content while still flipped
-  setTimeout(()=>unflip('main'),50);
+  card.classList.remove('flip');
+  renderCardContent();
+  // Fade back in
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    backFace.style.visibility='';
+    card.style.transition='opacity 0.25s ease, transform 0.6s cubic-bezier(.4,0,.2,1)';
+    card.style.opacity='1';
+    setTimeout(()=>{card.style.transition='';},300);
+  }));
 }
 
 /* ================================================================ RANDOM MODE ================================================================ */
+function rndCardClick(){if(rndActive)flipC('rnd');}
 function doRnd(){
-  rndStarted=true;
+  rndActive=true;
   document.getElementById('rndFlipBtn').style.display='inline-flex';
-  // True random using crypto if available
+  document.getElementById('rFlipHint').style.display='flex';
+  const card=document.getElementById('rndCard');
+  const back=document.querySelector('#rndCard .cf-back');
+  // Fade out entirely, swap content, unflip, fade in
+  card.style.transition='none';card.style.opacity='0';back.style.visibility='hidden';
+  card.classList.remove('flip');
+  // Pick random index (avoid repeat)
   let idx;
-  if(window.crypto&&window.crypto.getRandomValues){
-    const arr=new Uint32Array(1);window.crypto.getRandomValues(arr);idx=arr[0]%QS.length;
-  } else {idx=Math.floor(Math.random()*QS.length);}
+  const prevIdx=rndIdx;
+  do{
+    if(window.crypto&&window.crypto.getRandomValues){const a=new Uint32Array(1);window.crypto.getRandomValues(a);idx=a[0]%QS.length;}
+    else{idx=Math.floor(Math.random()*QS.length);}
+  }while(idx===prevIdx&&QS.length>1);
   rndIdx=idx;
   const q=QS[idx];
-  document.getElementById('rNum').textContent=`Q${q.id} · ${SECTION_NAMES[q.sec]}${q.senior?' ⭐':''}`;
+  document.getElementById('rNum').textContent=`Q${q.id}${q.senior?' ⭐':''}`;
   document.getElementById('rCat').textContent=SECTION_NAMES[q.sec];
   document.getElementById('rQ').innerHTML=q.q;
+  document.getElementById('rQ').style.color='';
+  document.getElementById('rQ').style.fontFamily='';
+  document.getElementById('rQ').style.fontSize='';
+  document.getElementById('rQ').style.fontWeight='';
   document.getElementById('rAns').innerHTML=buildAns(q);
-  // content set before unflip
-  unflip('rnd');
-  setTimeout(()=>syncH(document.getElementById('rndWrap'),document.querySelector('#rndCard .cf-front'),document.querySelector('#rndCard .cf-back')),0);
+  resetScroll('rAnsScroll');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    back.style.visibility='';
+    card.style.transition='opacity 0.2s ease, transform 0.6s cubic-bezier(.4,0,.2,1)';
+    card.style.opacity='1';
+    checkFade('rAnsScroll','rAnsFade');
+    setTimeout(()=>{card.style.transition='';},250);
+  }));
 }
 function markRnd(ok){
   if(rndIdx===null)return;
   const q=QS[rndIdx];
   scores[q.id]=ok?'ok':'no';
-  if(ok){streak++;toast(lang==='es'?'✅ ¡Correcto!':'✅ Got it right!');}else{streak=0;toast(lang==='es'?'❌ ¡Sigue practicando!':'❌ Wrong — keep practicing!');}
+  if(ok){streak++;toast('✅ Got it right!');}else{streak=0;toast('❌ Wrong — keep practicing!');}
   saveS();updateUI();
-  // Set next card content, then unflip
-  const prevIdx=rndIdx;
-  // pick new random (avoid same q)
-  let ni;do{if(window.crypto&&window.crypto.getRandomValues){const a=new Uint32Array(1);window.crypto.getRandomValues(a);ni=a[0]%QS.length;}else{ni=Math.floor(Math.random()*QS.length);}}while(ni===prevIdx&&QS.length>1);
-  rndIdx=ni;
-  const q2=QS[ni];
-  document.getElementById('rNum').textContent=`Q${q2.id} · ${SECTION_NAMES[q2.sec]}${q2.senior?' ⭐':''}`;
-  document.getElementById('rCat').textContent=SECTION_NAMES[q2.sec];
-  document.getElementById('rQ').innerHTML=q2.q;
-  document.getElementById('rAns').innerHTML=buildAns(q2);
-  setTimeout(()=>{unflip('rnd');syncH(document.getElementById('rndWrap'),document.querySelector('#rndCard .cf-front'),document.querySelector('#rndCard .cf-back'));},50);
+  doRnd();
 }
 
 /* ================================================================ TEST MODE ================================================================ */
@@ -967,7 +1192,8 @@ function renderTC(){
   document.getElementById('tQN').textContent=tIdx+1;
   document.getElementById('tPL').textContent=`Q ${tIdx+1} of ${tQs.length}`;
   unflip('test');
-  setTimeout(()=>syncH(document.getElementById('testWrap'),document.querySelector('#testCard .cf-front'),document.querySelector('#testCard .cf-back')),0);
+  resetScroll('tAnsScroll');
+  setTimeout(()=>checkFade('tAnsScroll','tAnsFade'),50);
 }
 function markT(ok){
   const dot=document.getElementById('d'+tIdx);
@@ -982,17 +1208,30 @@ function markT(ok){
   tIdx++;
   if(tIdx>=tQs.length){showTRes(tC>=pass);return;}
   const nd=document.getElementById('d'+tIdx);if(nd)nd.classList.add('dcu');
-  // Set content BEFORE showing (no flash)
   const q=tQs[tIdx];
+  const card=document.getElementById('testCard');
+  const backT=document.querySelector('#testCard .cf-back');
+  // Fade out, swap content, unflip, fade in
+  card.style.transition='none';
+  card.style.opacity='0';
+  backT.style.visibility='hidden';
+  card.classList.remove('flip');
   document.getElementById('tCN').textContent=`Test Q ${tIdx+1}`;
   document.getElementById('tCat').textContent=SECTION_NAMES[q.sec];
   document.getElementById('tQT').innerHTML=q.q;
   document.getElementById('tAns').innerHTML=buildAns(q);
+  resetScroll('tAnsScroll');
   document.getElementById('tC').textContent=tC;
   document.getElementById('tW').textContent=tW;
   document.getElementById('tQN').textContent=tIdx+1;
   document.getElementById('tPL').textContent=`Q ${tIdx+1} of ${tQs.length}`;
-  setTimeout(()=>{unflip('test');syncH(document.getElementById('testWrap'),document.querySelector('#testCard .cf-front'),document.querySelector('#testCard .cf-back'));},50);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    backT.style.visibility='';
+    card.style.transition='opacity 0.25s ease, transform 0.6s cubic-bezier(.4,0,.2,1)';
+    card.style.opacity='1';
+    checkFade('tAnsScroll','tAnsFade');
+    setTimeout(()=>{card.style.transition='';},300);
+  }));
 }
 function showTRes(pass){
   document.getElementById('tActive').style.display='none';
@@ -1027,14 +1266,35 @@ function renderList(){
   if(!qs.length){l.innerHTML=`<div style="text-align:center;color:var(--silver);padding:36px;font-size:13px">${lang==='es'?'No hay resultados.':'No questions match your search.'}</div>`;return;}
   l.innerHTML=qs.map(q=>{const sc=scores[q.id];const cls=sc==='ok'?'qok':sc==='no'?'qno':'';const ico=sc==='ok'?' ✅':sc==='no'?' ❌':'';return`<div class="qi ${cls}" onclick="jumpTo(${q.id})"><span class="qn">#${q.id}${q.senior?'⭐':''}</span><span class="qt">${q.q.replace(/<u>|<\/u>/g,'')}${ico}</span><span class="qtag">${q.sec}</span></div>`;}).join('');
 }
-function jumpTo(id){curCat='all';filteredQs=[...QS];document.querySelectorAll('.cp').forEach(p=>p.classList.remove('on'));document.querySelector('.cp-all').classList.add('on');curIdx=QS.findIndex(q=>q.id===id);localStorage.setItem('cv_idx',curIdx.toString());showSec('flash');renderCard();}
+function jumpTo(id){
+  curCat='all';filteredQs=[...QS];
+  document.querySelectorAll('.cp').forEach(p=>p.classList.remove('on'));
+  document.querySelector('.cp-all').classList.add('on');
+  const newIdx=QS.findIndex(q=>q.id===id);
+  curIdx=newIdx;
+  localStorage.setItem('cv_idx',curIdx.toString());
+  // Immediately disable transition, hide both faces, force front face, render content
+  const card=document.getElementById('mainCard');
+  const backFace=document.querySelector('#mainCard .cf-back');
+  card.style.transition='none';
+  backFace.style.visibility='hidden';
+  card.classList.remove('flip');
+  showSec('flash');
+  renderCard();
+  // Re-enable after a full frame so there's no animation on arrival
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    card.style.transition='';
+    backFace.style.visibility='';
+  }));
+}
 
 /* ================================================================ FAQ ================================================================ */
 const FAQS=[
+  {en_q:'⭐ Is the 2025 test the current/latest version right now?',en_a:'<strong style="color:#6EE89B">Yes — the 2025 Naturalization Civics Test is the current, active version being administered today.</strong> It took effect October 20, 2025 and remains in use until USCIS officially announces a replacement. The "2025" in the name refers to when this version was implemented — <em>not</em> that it expires in 2025. Many people in 2026 and beyond will still take this same test. This site will be updated whenever USCIS makes changes.'},
   {en_q:'How many questions are on the 2025 naturalization civics test?',en_a:'The 2025 naturalization civics test pool has <strong>128 questions</strong>. During your naturalization interview, a USCIS officer asks you <strong>up to 20</strong> of these questions randomly selected.'},
   {en_q:'How many questions do you need to answer correctly to pass?',en_a:'You must answer <strong>at least 12 out of 20 questions correctly</strong> to pass. The officer stops asking immediately when you reach 12 correct (you pass!) or 9 incorrect (you fail). This means you may answer fewer than 20 questions.'},
   {en_q:'When did the 2025 civics test take effect, and who takes it?',en_a:'The 2025 Naturalization Civics Test took effect on <strong>October 20, 2025</strong>. Anyone who filed Form N-400 <strong>on or after that date</strong> takes the 2025 test (128 questions, 20 asked, 12 to pass). Anyone who filed before that date takes the 2008 test (100 questions, 10 asked, 6 to pass).'},
-  {en_q:'What changed between the 2025 test and the old 2008 test?',en_a:'Three key differences: (1) The question pool grew from <strong>100 to 128 questions</strong>. (2) The officer asks <strong>20 questions</strong> instead of 10. (3) You need <strong>12 correct answers</strong> instead of 6 to pass. The 2025 test is based on the 2020 version with modifications.'},
+  {en_q:'What changed between the 2025 test and the old 2008 test?',en_a:'Three key differences: (1) The question pool grew from <strong>100 to 128 questions</strong>. (2) The officer asks <strong>20 questions</strong> instead of 10. (3) You need <strong>12 correct answers</strong> instead of 6 to pass. <em>Historical note: USCIS did develop a "2020 version" of the test (announced Nov 2020, in use Dec 2020 – Apr 2021), which also used 128 questions. It was rescinded by the Biden administration in early 2021 and the country reverted to the 2008 test. The current 2025 test is based on those same 128 questions, reimplemented under a 2025 executive order.</em>'},
   {en_q:'What is the 65/20 senior exemption?',en_a:'If you are <strong>65 years of age or older</strong> AND have been a <strong>lawful permanent resident for at least 20 years</strong>, you qualify for the 65/20 exemption. You study only 20 special questions (marked ⭐ on this site), are asked 10, and need <strong>6 out of 10 correct</strong> to pass. You may also take the civics test in the <strong>language of your choice</strong>.'},
   {en_q:'Is the civics test really an oral (spoken) test?',en_a:'Yes! The civics test is <strong>completely oral</strong>. A USCIS officer asks you questions verbally, and you answer them out loud in English (unless you qualify for a language exemption). This is why practicing saying your answers aloud is so important!'},
   {en_q:'Can I take the civics test in Spanish or another language?',en_a:'Yes, if you qualify: the <strong>50/20 exception</strong> (age 50+, permanent resident 20+ years) or <strong>55/15 exception</strong> (age 55+, permanent resident 15+ years) allows you to take the civics test in your native language with an interpreter. The 65/20 senior exemption also allows this.'},
@@ -1046,7 +1306,26 @@ function renderFAQ(){const l=document.getElementById('faqList');l.innerHTML=FAQS
 function tFAQ(i){const q=document.getElementById('fq'+i),a=document.getElementById('fa'+i);const open=q.classList.contains('open');document.querySelectorAll('.faq-q').forEach(e=>e.classList.remove('open'));document.querySelectorAll('.faq-a').forEach(e=>e.style.maxHeight='0');if(!open){q.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}}
 
 /* ================================================================ KEYBOARD ================================================================ */
-document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT')return;const act=document.querySelector('.sec.on')?.id;if(act==='sec-flash'){if(e.key==='ArrowRight'||e.key==='ArrowDown')nextC();else if(e.key==='ArrowLeft'||e.key==='ArrowUp')prevC();else if(e.key===' '){e.preventDefault();flipC('main');}else if(e.key.toLowerCase()==='y'&&document.getElementById('mainCard').classList.contains('flip'))markC(true);else if(e.key.toLowerCase()==='n'&&document.getElementById('mainCard').classList.contains('flip'))markC(false);}});
+document.addEventListener('keydown',e=>{
+  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT'||e.target.tagName==='TEXTAREA')return;
+  const act=document.querySelector('.sec.on')?.id;
+  if(act==='sec-flash'){
+    if(e.key==='ArrowRight'||e.key==='ArrowDown')nextC();
+    else if(e.key==='ArrowLeft'||e.key==='ArrowUp')prevC();
+    else if(e.key===' '){e.preventDefault();flipC('main');}
+    else if(e.key.toLowerCase()==='y'&&document.getElementById('mainCard').classList.contains('flip'))markC(true);
+    else if(e.key.toLowerCase()==='n'&&document.getElementById('mainCard').classList.contains('flip'))markC(false);
+  } else if(act==='sec-rand'){
+    if(e.key===' '){e.preventDefault();if(rndActive)flipC('rnd');}
+    else if(e.key.toLowerCase()==='r')doRnd();
+    else if(e.key.toLowerCase()==='y'&&document.getElementById('rndCard').classList.contains('flip'))markRnd(true);
+    else if(e.key.toLowerCase()==='n'&&document.getElementById('rndCard').classList.contains('flip'))markRnd(false);
+  } else if(act==='sec-test'){
+    if(e.key===' '){e.preventDefault();flipC('test');}
+    else if(e.key.toLowerCase()==='y'&&document.getElementById('testCard').classList.contains('flip'))markT(true);
+    else if(e.key.toLowerCase()==='n'&&document.getElementById('testCard').classList.contains('flip'))markT(false);
+  }
+});
 
 /* ================================================================ INIT ================================================================ */
 // Restore saved position (only if within bounds of full 128 list)
